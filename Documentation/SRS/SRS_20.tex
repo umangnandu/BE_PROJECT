@@ -1,0 +1,139 @@
+\documentclass[12pt,a4paper,final,oneside]{report}
+
+\usepackage{geometry}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphics}
+\usepackage{amsmath}
+\usepackage{array}
+\usepackage[pdftex]{hyperref}
+\usepackage{epstopdf}
+\usepackage{graphicx}
+
+\hypersetup{
+    bookmarks=false,
+    pdftitle={Software Requirement Specification},
+    pdfauthor={Yiannis Lazarides},
+    pdfsubject={TeX and LaTeX},
+    pdfkeywords={TeX, LaTeX, graphics, images},
+    colorlinks=true,
+    linkcolor=blue,
+    citecolor=black,
+    filecolor=black,
+    urlcolor=purple,
+    linktoc=page
+}%
+\def\myversion{1.0 }
+\title{
+\flushright
+\rule{16cm}{5pt}\vskip0.5cm
+\Huge{Software Requirements Specification}\\
+\vspace{0.1cm}
+for\\
+\vspace{0.1cm}
+Speech to 3D Scene Generation\\
+\vspace{0.5cm}
+Prepared by\linebreak Manthan Turakhia - 1624013\linebreak Umang Nandu - 1624016 \linebreak Prayesh Shah - 1624019 \linebreak Siddharth Sharma - 1624020\\
+\vspace{0.5cm}
+Under the guidance of \linebreak Prof. Sagar D. Korde.\\
+\vfill
+\rule{16cm}{5pt}	
+}
+\date{}
+\usepackage{hyperref}
+\begin{document}
+\maketitle
+\tableofcontents
+\chapter{Introduction}
+\section{Product Overview}
+\paragraph{}''Speech to 3D Scene Generation'' is a software that is developed to provide a near run-time digital/graphical output to the literal spoken words of the user. It goes through various stages before providing the final output. First, the speech is converted to text, then the text is passed to the interpretation protocol, and finally the interpreted text is used to render the output.\linebreak
+	The best part of '''Speech to 3D Scene Generation'' is that it is meant to be used by any person who can speak. It is targeted to be used at various industries like education, creative, etc. as well as corporates. It will run on Windows Desktop Applications. \linebreak
+	In general, the software will require APIs and coding platforms that will allow us to convert text to speech and then using speech to render the images.
+
+\chapter{Specific Requirements}
+\section{EXTERNAL INTERFACE REQUIREMENTS}
+\subsection{User Interfaces}
+\paragraph{} The user interface requirements for “title” is are very general because it is a Desktop application. The PC at the user end should have only the basic screen layouts with no requirements for latest OS. However, it may not be compatible for very earlier versions of Windows OS.\linebreak
+	The user should be able to easily navigate to the part where it enables the speaker and the software should immediately start recording, converting and rendering. It is essential that it is simply a one-step process for the user and then it should all be a completely automatic process.
+
+\subsection{Hardware Interfaces}
+There isn’t much hardware interfaces required since it is a completely software-oriented product. The only requirement is for it to work on any type of PC (Laptop, Computer) which match the basic OS and version requirements.
+
+\subsection{Software Interfaces}
+Softwares Required:
+\begin{itemize}
+  \item Google Speech-to-Text API (Integrated Library)
+  \item SpaCy Version 2.0.13
+  \item 3D Warehouse/LFD Laboratory
+\end{itemize}
+
+\section{SOFTWARE PRODUCT FEATURES}
+''Speech to 3D Scene Generation'' will provide following features:-\newline
+\subsection{FUNCTIONAL REQUIREMENTS}
+\begin{enumerate}
+  \item Input Data requirements: :
+\begin{itemize}
+\item Speech Input.
+\item JSON as an input data to Database and Rendering.
+\end{itemize}
+\item Operational requirements
+\begin{itemize}
+\item Conversion of speech to text.
+\item POS tagging.
+\item Parse tree generation.
+\item Information gathering and rendering.
+\end{itemize}
+\end{enumerate}
+\subsection{NON - FUNCTIONAL REQUIREMENTS}
+\begin{enumerate}
+  \item Performance: 75\% conversion accuracy. Worst case 15s generation. Best case 3s.
+ \item Data Integrity: Data and modules to be kept abstract.
+ \item Usability: Smooth screen-to-screen movement.
+
+\end{enumerate}
+\section{SOFTWARE SYSTEM ATTRIBUTES}
+\subsection{RELIABILITY}
+\paragraph{}
+\begin{itemize}
+  \item Mean Time To Failure (MTTF) is Twenty Seconds.
+  \item Expected optimal time for rendering and displaying is Seven Seconds.
+  \item Speech-to-Text 75\% accuracy.
+\end{itemize}
+
+\subsection{AVAILABILITY}
+\paragraph{}
+\begin{itemize}
+  \item Failure at any point of the process will lead to complete termination and the user will have to start and perform the process all over again.
+\end{itemize}
+
+\subsection{SECURITY}
+\paragraph{}
+\begin{itemize}
+  \item Since it is a Desktop application, the basic security measures taken by the user are sufficient with no additional requirements except for basic login credentials.
+  \item Data/image/graph rendering is over the internet therefore simple internet security is more than enough.
+\end{itemize}
+
+\subsection{PORTABILITY}
+\paragraph{}
+\begin{itemize}
+  \item Entire software is mainly Python-oriented.
+  \item No need of external compiler because of integrated environment.
+  \item Most commonly used OS (Windows) is all that is required with no additional features.
+\end{itemize}
+
+\subsection{PERFORMANCE}
+\paragraph{}
+\begin{itemize}
+  \item As mentioned, minimum 75\% accuracy for Google speech-to-text API. Minimum latency for rendering.
+  \item Users are expected to provide clear speech inputs, avoiding grammatical errors.
+  \item Users are expected to be in a relatively quiet environment so as to ease the processing of the API.
+  \item Data storage integrated using cloud therefore not much physical storage required.
+\end{itemize}
+
+\section{DATABASE  REQUIREMENTS}
+\begin{itemize}
+\item No database required except for Google 3D Warehouse/LFD Laboratory.
+\end{itemize}
+
+\end{document}
+

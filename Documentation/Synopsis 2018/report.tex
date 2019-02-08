@@ -1,0 +1,77 @@
+\documentclass[12pt,a4paper,final,oneside]{report}
+%\newcolumntype{L}{>{\centering\arraybackslash}m{2.5cm}}
+\usepackage{hyperref}
+\usepackage[vertfit]{breakurl}
+\usepackage{etoolbox}
+%\apptocmd{\thebibliography}{\raggedright}{}{}
+\usepackage{hyphenat}
+\usepackage{float}
+\usepackage{placeins}
+\usepackage{afterpage}
+
+
+%\usepackage[none]{hyphenat}
+\usepackage{geometry}
+%\usepackage{hyperref} 
+%\usepackage[vertfit]{breakurl}
+\usepackage{amsfonts}
+\usepackage{float}
+
+\usepackage{amssymb}
+\usepackage{graphics}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{array}
+\usepackage[pdftex]{hyperref}
+\bibliographystyle{unsrt}%\usepackage{biblatex2}
+
+
+\begin{document}
+\setcounter{secnumdepth}{3}
+
+\thispagestyle{empty}
+\input{cover1.tex}
+\pagebreak
+%\input{cover2.tex}
+
+\input{Cert2.tex}
+\pagenumbering{roman}
+\input{abst.tex}
+  \addcontentsline{toc}{chapter}{Abstract}
+\clearpage
+\tableofcontents
+
+\listoffigures
+  \addcontentsline{toc}{chapter}{List of Figures}
+
+\listoftables
+   \addcontentsline{toc}{chapter}{List of Tables}
+
+\newpage
+
+\pagestyle{plain}
+\pagenumbering{arabic}
+
+\input{chap1.tex}
+\input{chap2.tex}
+\input{chap3.tex}
+\input{chap4.tex}
+\input{chap5.tex}
+\input{chap6.tex}
+\renewcommand{\bibname}{References}
+\bibliographystyle{unsrt}
+\bibliographystyle{plainnat}
+\renewcommand{\bibliography}{\References}
+\addcontentsline{toc}{chapter}{References}
+%%\bibliography{author}
+\begin{thebibliography}{9}
+		\bibitem{wordsEye} 
+		Bob Coyne and Richard Sproat. “WordsEye: an automatic text-to-scene conversion system”. In Proceedings of the 28th annual conference on Computer graphics and interactive techniques, 2001.
+		\bibitem{nlp}
+		Lee M Seversky and Lijun Yin.“Real-time automatic 3D scene generation from natural language voice and text descriptions”. In Proceedings of the14th annual ACM international conference on Multimedia ,2006.
+		\bibitem{AI}
+		R. Johansson, A. Berglund, M. Danielsson, "Artificial Intelligence" The Nineteenth International Joint Conference , pages 1073–1078, 2005.
+		
+\end{thebibliography}
+\input{ack.tex}
+\end{document}

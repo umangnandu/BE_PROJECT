@@ -1,0 +1,70 @@
+\chapter{Software Test Document}
+\section{Introduction}
+
+\subsection{System Overview}
+\paragraph{}Speech to 3d Scene generator is a software application developed to provide a near real time 3D scene. It goes through various stages before providing the output. Speech input in converted into text, then the text is processed using natural language processing and broken down into low level parts of speech tags.
+	A parse tree generating a semantic relationship is generated which will further be used to generate and fire queries dynamically to a 3d model database. The 3d models extracted from the model database will be rendered on a model viewer and positioned with respect to other models in that scene. Any queries fired further will manipulate the existing scene in near real time.
+\newpage
+\subsection{Test Approach} 
+\begin{table}[h!]
+\caption{Test Approach}
+  \centering
+  \begin{tabular}{|p{3.5cm}|p{10cm}|}
+\hline
+   TEST& DESCRIPTION.\\
+    \hline
+    Unit Testing &The purpose is to validate that each unit of the software performs as designed. Units like speech to text, parts of speech tagging, semantic relations and database handlers are tested.\\
+    \hline
+    Integration Testing &The purpose of this testing is to expose faults in the interaction between integrated units. Above mentioned modules are tested to remove faults.\\
+
+\hline
+    Functional Testing  &Includes testing of all database handlers. Input from the user is validated against various test cases.\\
+\hline
+    Usability Testing &The application will be checked for user friendliness and comfort. Each user function is tested which includes test for navigation and buttons, content checking.\\
+ \hline
+
+  \end{tabular}
+\end{table}
+
+\subsection{ Features to be tested }
+\begin{enumerate}
+\item \textbf{Speech to text Conversion}
+\item \textbf{Scene Generation}
+\item \textbf{Scene Manipulation }
+\end{enumerate}
+
+\subsection{Features not to be tested}
+\begin{enumerate}
+\item \textbf{Parts of Speech Tagging.}
+\item \textbf{Label are not to be tested.}
+\end{enumerate}
+
+\subsection{Testing Tools and Environment}
+\paragraph{}Testing of the software application will require 15-25 days. Manual as well automated testing approaches will be applied.\\
+\textbf{1. AutoIT : }AutoIT is a Stand Alone (doesn’t require any configuration) and small footprint tool, that simulates mouse and keyboard clicks . It activates the binary files of the tested app using a Reflection.\linebreak The AutoIT comes with dedicated IDE, and is compatible with recordings and coding in its own scripting language (very similar to BASIC syntax). \\
+
+\textbf{2. TestStack.White : }White is a library for automation of desktop apps. It started as a small open source project and then became a part of TestStack which consists of a variety of open source code projects for automated and manual testing.\linebreak White supports a variety of automation technologies: Silverlight, WPF, WinForms, Win32 and SWT in Java. It’s possible to write White tests in any language supported by .NET.\\
+
+\textbf{3. Pywinauto : }The PyWinAuto is a Python library that provides a collection of functions that make operations on Windows (controls and windows dialogs). The library presents a wide set of operations, is clear and user friendly.
+\newpage
+\section{Test Cases}
+ \begin{table}[h!]
+ \caption{Test Cases}
+  \centering
+
+  \begin{tabular}{|p{2.5cm}|p{4.5cm}|p{2cm}|p{4.5cm}|}
+\hline
+    Test Case&Purpose& Input&Expected output\\
+    \hline
+   Speech to text conversion&Whether the input speech converted into the text is valid for the further processing or not. To check how accurate, the speech is converted is converted into text.&Voice Input&The text is valid if the text converted is same as the speech input given by the user. If it is then text is further processed else user can rerecord the input.\\
+    \hline
+   Tagging and Labelling&To check whether the parts of speech tagging and labelling of the text is done meaningfully or not.&Text Converted using Speech to text Recognition.&JSON or XML file which will contain proper parts of speech tagging and labelling of the text.\\
+ \hline
+  Rendered Models& To check whether the rendered models from data warehouse are perfectly suitable with the input provided in first stage.&No input from the user, the converted text is processed further.&Actual model of specific objects specified by the user are correctly rendered else final output will be incorrect, Models should not overlap.\\
+ \hline
+   Positions of the object (models)&To check whether the models rendered and displayed on the output screen are at proper coordinates as user wants.&No specific input, Text is processed&Objects are at proper position as mentioned by the user into the speech input.\\
+
+ \hline
+
+  \end{tabular}
+\end{table}
